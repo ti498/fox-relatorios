@@ -367,14 +367,19 @@ function panelClick(id){
 }
 
 function tipToggle(btn){
+  event.stopPropagation();
   var existing=btn.parentNode.querySelector('.tip-popup');
   if(existing){ existing.remove(); return; }
   var d=document.createElement('div');
   d.className='tip-popup';
   d.textContent=btn.getAttribute('title');
-  d.onclick=function(e){ e.stopPropagation(); d.remove(); };
+  d.addEventListener('click',function(e){ e.stopPropagation(); d.remove(); });
+  d.addEventListener('touchstart',function(e){ e.stopPropagation(); d.remove(); });
   btn.parentNode.appendChild(d);
-  document.addEventListener('click',function h(){ d.remove(); document.removeEventListener('click',h); },{once:true});
+  setTimeout(function(){
+    document.addEventListener('click',function h(){ d.remove(); document.removeEventListener('click',h); },{once:true});
+    document.addEventListener('touchstart',function h(){ d.remove(); document.removeEventListener('touchstart',h); },{once:true});
+  },50);
 }
 </script>
 </body>
