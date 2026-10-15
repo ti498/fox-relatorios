@@ -142,6 +142,18 @@ footer{border-top:1px solid var(--bdr);padding:20px 0;margin-top:16px;display:fl
   </summary>
   <div class="section-body">
     <p class="section-sub">Vendas de 14/10/2026 onde foi identificado o operador de pre-venda da equipe do Gilcimar.</p>
+    <details style="margin-bottom:14px;font-size:12px;color:var(--muted)">
+      <summary style="cursor:pointer;user-select:none;display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid rgba(125,133,144,.25);border-radius:6px;list-style:none">
+        <span style="font-size:14px">ℹ️</span> Legenda da coluna MOVERE
+      </summary>
+      <div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:10px;padding:14px 16px;background:rgba(125,133,144,.06);border:1px solid rgba(125,133,144,.15);border-radius:8px">
+        <div style="min-width:200px;display:flex;align-items:flex-start;gap:8px"><span class="badge b-ok" style="flex-shrink:0;margin-top:1px">⚡ Atribuído</span><span>Campo estava vazio no MOVERE — pipeline preencheu com o operador identificado.</span></div>
+        <div style="min-width:200px;display:flex;align-items:flex-start;gap:8px"><span class="badge b-warn" style="flex-shrink:0;margin-top:1px">🔄 Corrigido</span><span>Campo tinha outro operador — pipeline detectou divergência e sobrescreveu com o correto.</span></div>
+        <div style="min-width:200px;display:flex;align-items:flex-start;gap:8px"><span class="badge b-info" style="flex-shrink:0;margin-top:1px">✓ Já correto</span><span>MOVERE já tinha o operador certo — pipeline confirmou e pulou sem alterar.</span></div>
+        <div style="min-width:200px;display:flex;align-items:flex-start;gap:8px"><span class="badge b-warn" style="flex-shrink:0;margin-top:1px">🔒 Bloqueado</span><span>Registro aprovado/bloqueado no MOVERE — campo ficou somente leitura, requer intervenção manual.</span></div>
+        <div style="min-width:200px;display:flex;align-items:flex-start;gap:8px"><span class="badge b-crit" style="flex-shrink:0;margin-top:1px">✗ Erro</span><span>Falha técnica após todas as tentativas — pipeline tentou repetir mas não conseguiu processar.</span></div>
+      </div>
+    </details>
     <div class="t-wrap">
     <table>
       <thead><tr>
@@ -193,6 +205,6 @@ footer{border-top:1px solid var(--bdr);padding:20px 0;margin-top:16px;display:fl
   upd();
 })();
 </script>
-<!-- gerado: 2026-10-15T09:48:27 -->
+<!-- gerado: 2026-10-15T09:52:13 -->
 </body>
 </html>
